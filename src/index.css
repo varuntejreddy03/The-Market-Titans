@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=DM+Serif+Display:ital@0;1&family=Epilogue:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-body bg-navy text-white;
+    font-size: 17px;
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+  }
+  section { scroll-margin-top: 64px; }
+
+  /* Ensure nothing covers the navbar */
+  section, footer, header { isolation: auto; }
+  ::selection { background: rgba(212,160,23,0.3); color: white; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #07091E; }
+  ::-webkit-scrollbar-thumb { background: #D4A017; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #F0C040; }
+}
+
+/* Typography utilities */
+.font-display { font-family: 'Playfair Display', serif; }
+.font-heading { font-family: 'DM Serif Display', serif; }
+.font-label { font-family: 'Barlow Condensed', sans-serif; }
+
+.section-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  @apply text-[12px] tracking-[0.18em] uppercase font-semibold text-gold;
+}
+
+.nav-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  @apply text-[13px] tracking-[0.12em] uppercase font-semibold;
+}
+
+.btn-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  @apply text-[13px] tracking-[0.12em] uppercase font-bold;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  @apply text-[56px] font-bold leading-none tracking-tighter;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes widthGrow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(212,160,23,0.3); }
+  50% { box-shadow: 0 0 40px rgba(212,160,23,0.6); }
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,160,23,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(212,160,23,0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: all 0.7s ease-out;
+  will-change: transform;
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.hero-underline { animation: widthGrow 1s ease-out forwards; }
+.price-glow { animation: glowPulse 2s ease-in-out infinite; }
+.badge-pulse { animation: badgePulse 2s ease-in-out infinite; }
+
+button, a { @apply transition-all duration-200 active:scale-95 cursor-pointer; }
+.card-hover { will-change: transform; }
