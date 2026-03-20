@@ -1,40 +1,69 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => (
-  <footer className="bg-navy pt-24 pb-10 text-white relative z-20 overflow-hidden">
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
-    <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full h-40 bg-gold/5 rounded-full blur-[100px]"></div>
+  <footer style={{ background: '#060E1A', borderTop: '1px solid rgba(77,184,232,0.15)' }} className="pt-16 md:pt-24 pb-10 text-white relative z-20 overflow-hidden">
+    <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full h-40 bg-[#4DB8E8]/5 rounded-full blur-[100px]"></div>
 
     <div className="max-w-7xl mx-auto px-6 relative z-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-12 md:mb-16">
 
         {/* Brand */}
         <div>
           <div className="mb-6">
-            <Logo size="sm" />
+            <Logo size="footer" />
           </div>
-          <p className="text-white/40 italic text-sm leading-relaxed mb-8">"We build revenue engines."</p>
+          <p className="italic text-sm leading-relaxed mb-8" style={{ color: '#8899AA' }}>"We build revenue engines."</p>
           <div className="flex gap-3">
             {[<Facebook size={16} />, <Instagram size={16} />, <Linkedin size={16} />].map((icon, i) => (
-              <a key={i} href="#" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold hover:bg-gold/5 transition-all duration-300">
+              <a 
+                key={i} 
+                href="#" 
+                className="flex items-center justify-center transition-all duration-300 hover:scale-110"
+                style={{ 
+                  width: '36px', 
+                  height: '36px', 
+                  borderRadius: '50%', 
+                  background: 'rgba(77,184,232,0.1)', 
+                  border: '1px solid rgba(77,184,232,0.2)', 
+                  color: '#4DB8E8',
+                  padding: '8px'
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'rgba(77,184,232,0.2)';
+                  e.currentTarget.style.borderColor = '#4DB8E8';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'rgba(77,184,232,0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(77,184,232,0.2)';
+                }}
+              >
                 {icon}
               </a>
             ))}
           </div>
         </div>
 
-        {/* Nav */}
+        {/* Nav — React Router Links */}
         <div>
-          <h4 className="section-tag mb-8 opacity-40">Quick Navigation</h4>
-          <ul className="space-y-4">
-            {['Home', 'Services', 'About', 'Why Us', 'Contact'].map((item) => (
-              <li key={item}>
-                <a href={`#${item.toLowerCase().replace(' ', '')}`} className="nav-link text-white/40 hover:text-gold transition-colors duration-300 flex items-center gap-2 hover:translate-x-1">
-                  <ChevronRight size={13} className="text-gold/50" />
-                  {item}
-                </a>
+          <h4 className="font-label text-[11px] font-bold tracking-[0.2em] uppercase mb-6 md:mb-8" style={{ color: 'rgba(255,255,255,0.4)' }}>Quick Navigation</h4>
+          <ul className="space-y-3 md:space-y-4">
+            {[
+              { label: 'HOME', path: '/' },
+              { label: 'HOW IT WORKS', path: '/how-it-works' },
+              { label: 'ABOUT', path: '/about' },
+              { label: 'PRICING', path: '/pricing' },
+              { label: 'ROLES', path: '/roles' },
+              { label: 'INDUSTRIES', path: '/industries' },
+              { label: 'CONTACT', path: '/contact' }
+            ].map((item) => (
+              <li key={item.label}>
+                <Link to={item.path} className="text-white/60 hover:text-[#F5A623] transition-colors duration-300 flex items-center gap-2 hover:translate-x-1 uppercase text-sm font-bold tracking-widest">
+                  <ChevronRight size={13} style={{ color: 'rgba(77,184,232,0.5)' }} />
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -42,12 +71,12 @@ const Footer = () => (
 
         {/* Contact */}
         <div>
-          <h4 className="section-tag mb-8 opacity-40">Contact Nexus</h4>
-          <ul className="space-y-5 text-white/40 text-[14px]">
+          <h4 className="font-label text-[11px] font-bold tracking-[0.2em] uppercase mb-6 md:mb-8" style={{ color: 'rgba(255,255,255,0.4)' }}>Contact Nexus</h4>
+          <ul className="space-y-4 md:space-y-5 text-white/50 text-[14px]">
             {['Clifton Heights, Pennsylvania', '+1 (267) 298-7777', 'info@themarkettitans.com'].map((item) => (
               <li key={item} className="flex items-start gap-3 hover:text-white transition-colors cursor-default">
-                <ChevronRight size={13} className="text-gold mt-0.5 flex-shrink-0" />
-                <span>{item}</span>
+                <ChevronRight size={13} className="mt-0.5 flex-shrink-0" style={{ color: '#4DB8E8' }} />
+                <span className="break-all md:break-normal">{item}</span>
               </li>
             ))}
           </ul>
@@ -55,11 +84,11 @@ const Footer = () => (
 
       </div>
 
-      <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="font-label text-[11px] text-white/30 tracking-[0.15em] uppercase">
-          © 2026 THE MARKET TITANS | ALL RIGHTS RESERVED | CLIFTON HEIGHTS, PA
+      <div className="pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-center md:text-left" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <p className="font-label text-[10px] md:text-[11px] tracking-[0.15em] uppercase" style={{ color: '#4A5568' }}>
+          © 2026 THE MARKET TITANS | ALL RIGHTS RESERVED
         </p>
-        <p className="font-label text-[11px] text-white/20 tracking-[0.15em] uppercase">
+        <p className="font-label text-[10px] md:text-[11px] tracking-[0.15em] uppercase" style={{ color: '#4A5568' }}>
           STRATEGIC GROWTH CONSULTING
         </p>
       </div>

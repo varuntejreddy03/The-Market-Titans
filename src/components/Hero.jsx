@@ -1,66 +1,126 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowDown, CheckCircle } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen bg-navy flex flex-col justify-center overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(212,160,23,0.18),transparent)] pointer-events-none"></div>
-      <div className="absolute top-[20%] left-[15%] w-2 h-2 bg-gold rounded-full opacity-30 animate-[bounce_4s_infinite] pointer-events-none"></div>
-      <div className="absolute top-[40%] right-[10%] w-1.5 h-1.5 bg-gold rounded-full opacity-20 animate-[pulse_3s_infinite] pointer-events-none"></div>
-      <div className="absolute bottom-[30%] left-[25%] w-2.5 h-2.5 bg-gold rounded-full opacity-25 animate-[bounce_5s_infinite] pointer-events-none"></div>
+    <section id="home" className="relative flex flex-col justify-center overflow-hidden" style={{ background: 'radial-gradient(ellipse at 60% 50%, #1E3A6E 0%, #1B2A4A 40%, #0D1B2E 100%)', minHeight: '100vh', paddingBottom: 0 }}>
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(30,111,191,0.2) 0%, transparent 60%)' }}></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1E6FBF] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+      
+      {/* Animated Floating Particles */}
+      {[
+        {top: '15%', left: '20%', size: '8px', delay: '0s'},
+        {top: '45%', right: '15%', size: '6px', delay: '1.5s'},
+        {top: '75%', left: '25%', size: '10px', delay: '3.0s'},
+        {top: '30%', right: '35%', size: '8px', delay: '0.8s'},
+        {top: '80%', right: '20%', size: '6px', delay: '2.4s'},
+        {top: '25%', left: '45%', size: '7px', delay: '4.2s'},
+        {top: '60%', left: '10%', size: '9px', delay: '2.0s'},
+        {top: '10%', right: '40%', size: '8px', delay: '1.1s'},
+        {top: '55%', right: '45%', size: '6px', delay: '3.5s'},
+      ].map((p, i) => (
+        <div 
+          key={i} 
+          className="absolute bg-[#4DB8E8] rounded-full opacity-15 pointer-events-none" 
+          style={{ ...p, width: p.size, height: p.size, animation: `float 8s ease-in-out ${p.delay} infinite alternate` }}
+        ></div>
+      ))}
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center" style={{ paddingTop: '80px' }}>
         {/* Badge */}
-        <div className="opacity-0 animate-[fadeIn_0.5s_ease_forwards] inline-flex items-center space-x-2 border border-gold/50 bg-gold/5 px-5 py-2.5 rounded-full mb-10 badge-pulse">
+        <div className="opacity-0 animate-[fadeIn_0.5s_ease_forwards] inline-flex items-center space-x-2 border border-gold/50 bg-gold/5 px-6 py-3 rounded-full mb-10 badge-pulse shadow-[0_4px_15px_rgba(245,166,35,0.15)]">
           <span className="section-tag">⚡ U.S. BUSINESS GROWTH EXPERTS</span>
         </div>
 
         {/* Headline */}
-        <div className="space-y-2 mb-8 opacity-0 animate-[fadeIn_0.5s_0.15s_ease_forwards]">
-          <h1 className="font-display text-white font-bold leading-[1.08] tracking-[-0.02em]" style={{ fontSize: 'clamp(44px,7vw,80px)' }}>
+        <div className="space-y-4 mb-8 opacity-0 animate-[fadeIn_0.5s_0.15s_ease_forwards]">
+          <h1 className="font-display text-white font-[900]" style={{ fontSize: 'clamp(42px, 6vw, 78px)', lineHeight: '1.1' }}>
             We Don't Sell Services.
           </h1>
           <div className="relative inline-block">
-            <h1 className="font-display text-gold font-bold italic leading-[1.08] tracking-[-0.02em]" style={{ fontSize: 'clamp(44px,7vw,80px)' }}>
+            <h1 className="font-display font-[900] text-[#F5A623]" style={{ fontSize: 'clamp(42px, 6vw, 78px)', lineHeight: '1.1', textShadow: '0 0 40px rgba(245,166,35,0.3)' }}>
               We Build Revenue Engines.
             </h1>
-            <div className="absolute -bottom-2 left-0 h-0.5 bg-gold hero-underline opacity-70"></div>
+          </div>
+          
+          {/* Fixed orange divider — 80px centered */}
+          <div className="flex justify-center mt-6">
+            <div className="bg-[#F5A623] rounded-full" style={{ width: '80px', height: '3px', margin: '24px auto' }}></div>
           </div>
         </div>
 
         {/* Subheadline */}
-        <p className="opacity-0 animate-[fadeIn_0.5s_0.3s_ease_forwards] text-white/60 max-w-2xl mx-auto mb-12 text-lg leading-relaxed">
+        <p className="opacity-0 animate-[fadeIn_0.5s_0.3s_ease_forwards] text-[#CBD5E0] max-w-2xl mx-auto mb-12" style={{ fontSize: '18px', lineHeight: '1.7' }}>
           High-performance BPO, offshore operations, and marketing consulting —{' '}
-          <span className="text-gold font-bold text-xl">starting at $4/hour.</span>
+          <span className="text-[#F5A623] font-bold">starting at $4/hour.</span>
         </p>
 
         {/* CTAs */}
-        <div className="opacity-0 animate-[fadeIn_0.5s_0.45s_ease_forwards] flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a href="#contact" className="btn-text w-full sm:w-auto bg-gold text-navy px-10 py-5 rounded-full hover:bg-gold-light hover:shadow-[0_0_40px_rgba(212,160,23,0.5)] hover:scale-[1.03] transition-all shadow-xl shadow-gold/20 flex items-center justify-center">
-            GET FREE CONSULTATION →
-          </a>
-          <a href="#services" className="btn-text w-full sm:w-auto border-2 border-gold text-gold px-10 py-5 rounded-full hover:bg-gold/10 transition-all flex items-center justify-center">
+        <div className="opacity-0 animate-[fadeIn_0.5s_0.45s_ease_forwards] flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+          <Link 
+            to="/contact" 
+            className="hover:scale-[1.05] transition-all duration-300 flex items-center justify-center text-center"
+            style={{ 
+              background: 'linear-gradient(135deg, #F5A623, #E8940F)', 
+              color: '#1B2A4A', 
+              fontWeight: 800, 
+              borderRadius: '50px', 
+              padding: '16px 36px', 
+              boxShadow: '0 8px 30px rgba(245,166,35,0.4)',
+              textDecoration: 'none'
+            }}
+            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 12px 40px rgba(245,166,35,0.6)'}
+            onMouseLeave={e => e.currentTarget.style.boxShadow = '0 8px 30px rgba(245,166,35,0.4)'}
+          >
+            GET FREE CONSULTATION
+          </Link>
+          <a 
+            href="#services" 
+            className="transition-all duration-300 flex items-center justify-center text-center"
+            style={{ 
+              border: '2px solid #4DB8E8', 
+              color: '#4DB8E8', 
+              background: 'transparent', 
+              borderRadius: '50px', 
+              padding: '16px 36px',
+              fontWeight: 800,
+              textDecoration: 'none'
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#4DB8E8'; e.currentTarget.style.color = '#1B2A4A'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#4DB8E8'; }}
+          >
             EXPLORE SOLUTIONS
           </a>
         </div>
 
         <div className="mb-10 flex justify-center opacity-0 animate-[fadeIn_0.5s_0.6s_ease_forwards]">
-          <a href="#services" className="text-gold/40 hover:text-gold transition-colors animate-bounce">
+          <a href="#services" className="text-[#F5A623] hover:text-[#FFBB33] transition-colors animate-bounce">
             <ArrowDown size={28} />
           </a>
         </div>
 
         {/* Trust Bar */}
-        <div className="opacity-0 animate-[fadeIn_0.5s_0.6s_ease_forwards] backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-8 py-6 flex flex-wrap justify-center gap-8 md:gap-12 mx-auto">
+        <div 
+          className="opacity-0 animate-[fadeIn_0.5s_0.6s_ease_forwards] flex flex-wrap justify-center gap-8 md:gap-12 mx-auto relative py-6 px-8"
+          style={{
+            background: 'rgba(30, 58, 110, 0.5)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            borderTop: '1px solid rgba(77,184,232,0.15)',
+            borderBottom: '1px solid rgba(77,184,232,0.15)',
+            boxShadow: '0 -10px 40px rgba(11,31,77,0.5)'
+          }}
+        >
           {[
             'No Bloated Overhead',
             'BPO from $4/hr',
             '24/7 Operations',
             'Live in 14 Days',
           ].map((item) => (
-            <div key={item} className="flex items-center space-x-3 text-white/80">
-              <CheckCircle className="text-gold flex-shrink-0" size={17} />
-              <span className="font-label text-[13px] font-semibold tracking-wide">{item}</span>
+            <div key={item} className="flex items-center space-x-3 text-white font-semibold">
+              <CheckCircle className="text-[#F5A623] flex-shrink-0" size={17} />
+              <span style={{ fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase' }}>{item}</span>
             </div>
           ))}
         </div>

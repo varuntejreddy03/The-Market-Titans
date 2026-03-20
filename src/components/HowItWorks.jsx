@@ -1,63 +1,82 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { PrimaryButton } from './NavButtons';
 
-const steps = [
-  { number: '01', title: 'Free Consultation', desc: 'We learn your goals and run a deep audit of your current operations.' },
-  { number: '02', title: 'Custom Strategy', desc: 'We build your growth plan, aligning marketing with your sales goals.' },
-  { number: '03', title: 'Team Deployment', desc: 'Offshore or domestic teams go live within 14 days.' },
-  { number: '04', title: 'Scale & Grow', desc: 'We track every dollar of ROI, optimize daily, and repeat what works.' },
-];
+const HowItWorks = () => {
+  const steps = [
+    { num: '01', title: 'Consultation', desc: 'Kickoff call to map your bottlenecks and define your ideal engine structure.' },
+    { num: '02', title: 'Custom Build', desc: 'We pre-train and veteran-vet your offshore team to match your specific workflows.' },
+    { num: '03', title: 'Launch', desc: 'Go live in as little as 14 days with full operational management and KPI tracking.' },
+    { num: '04', title: 'Scale', desc: 'Weekly reviews and optimization cycles ensure your engine only gets faster over time.' },
+  ];
 
-const HowItWorks = () => (
-  <section id="howitworks" className="bg-bg-light py-24 relative overflow-visible">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center mb-24">
-        <span className="section-tag mb-5 block">OUR EXECUTION BLUEPRINT</span>
-        <h2 className="font-heading text-navy font-normal leading-tight mb-6" style={{ fontSize: 'clamp(30px,4vw,52px)' }}>
-          From Conversation to Revenue<br />in 4 Simple Steps
-        </h2>
-        <div className="w-20 h-0.5 bg-gold mx-auto"></div>
-      </div>
+  return (
+    <section id="howitworks" className="bg-[#1B2A4A] py-24 relative z-10 scroll-mt-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Title */}
+        <div className="text-center mb-20 reveal">
+          <h2 className="font-display text-white font-[900] leading-tight mb-4" style={{ fontSize: 'clamp(32px,5vw,60px)' }}>
+            From Kickoff to Revenue — In 14 Days.
+          </h2>
+          <p className="text-[#CBD5E0] max-w-xl mx-auto text-[17px] md:text-[18px] leading-relaxed">
+            No fluff. No lengthy onboarding. Just results.
+          </p>
+        </div>
 
-      {/* Desktop */}
-      <div className="hidden lg:block relative pt-16">
-        <div className="absolute top-[108px] left-[12%] right-[12%] h-px border-t-2 border-dashed border-gold/40 z-0"></div>
-        <div className="grid grid-cols-4 gap-10 relative z-10">
-          {steps.map((step, i) => (
-            <div key={i} className="reveal text-center flex flex-col items-center group">
-              <div className="relative mb-12">
-                <span className="absolute inset-0 rounded-full border-2 border-gold/30 scale-150 animate-pulse group-hover:scale-[1.7] transition-transform duration-500"></span>
-                <div className="relative z-10 w-16 h-16 rounded-full bg-navy border-2 border-gold text-gold font-display font-bold text-xl flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(212,160,23,0.4)] group-hover:scale-110 transition-transform duration-300">
-                  {step.number}
+        {/* 4 Steps Section */}
+        <div className="relative mb-24">
+          {/* Horizontal Timeline (Desktop) */}
+          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[3px] bg-[#F5A623] z-0 opacity-50 shadow-[0_0_15px_rgba(245,166,35,0.5)]"></div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
+            {steps.map((s, i) => (
+              <div 
+                key={i} 
+                className="reveal group flex flex-col pt-4 transition-all duration-400"
+              >
+                <div 
+                  className="w-full h-full flex flex-col transition-all duration-400"
+                  style={{
+                    background: '#162236',
+                    borderTop: '3px solid #F5A623',
+                    borderRadius: '16px',
+                    padding: '28px 20px',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <div className="font-display font-[800] leading-none mb-4" style={{ color: '#F5A623', fontSize: 'clamp(40px, 5vw, 56px)' }}>
+                    {s.num}
+                  </div>
+                  <h3 className="font-heading text-white font-bold text-[18px] md:text-[20px] mb-3 uppercase tracking-widest">{s.title}</h3>
+                  <p className="font-body text-[#8899AA] text-[14px] md:text-[15px] leading-relaxed">{s.desc}</p>
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-white hover:border-gold/20 transition-all duration-400 group-hover:-translate-y-2 cursor-pointer w-full">
-                <h3 className="font-heading text-navy font-normal text-xl mb-3">{step.title}</h3>
-                <p className="text-slate-500 text-[15px] leading-relaxed">{step.desc}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Mobile */}
-      <div className="lg:hidden relative">
-        <div className="absolute left-8 top-0 bottom-0 w-px border-l-2 border-dashed border-gold/40 z-0"></div>
-        <div className="space-y-12 relative z-10">
-          {steps.map((step, i) => (
-            <div key={i} className="reveal flex items-start gap-8 group">
-              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-navy border-2 border-gold text-gold font-display font-bold text-xl flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(212,160,23,0.4)]">
-                {step.number}
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-white w-full">
-                <h3 className="font-heading text-navy font-normal text-xl mb-3">{step.title}</h3>
-                <p className="text-slate-500 text-[15px] leading-relaxed">{step.desc}</p>
-              </div>
-            </div>
-          ))}
+        {/* Bottom CTA Banner */}
+        <div className="reveal text-center bg-[#162236] rounded-2xl md:rounded-3xl py-10 md:py-14 px-6 shadow-[0_8px_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#4DB8E8] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+          
+          <h3 className="font-display text-white font-[800] mb-8 relative z-10" style={{ fontSize: 'clamp(24px,4vw,40px)' }}>
+            Ready to build your revenue engine?
+          </h3>
+          <div className="relative z-10">
+            <PrimaryButton to="/contact">GET STARTED</PrimaryButton>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default HowItWorks;

@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import SocialProof from './components/SocialProof';
-import BPOCallout from './components/BPOCallout';
-import Services from './components/Services';
-import WhyUs from './components/WhyUs';
-import About from './components/About';
-import HowItWorks from './components/HowItWorks';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import HowItWorksPage from './pages/HowItWorksPage';
+import AboutPage from './pages/AboutPage';
+import PricingPage from './pages/PricingPage';
+import RolesPage from './pages/RolesPage';
+import IndustriesPage from './pages/IndustriesPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   useEffect(() => {
@@ -27,21 +26,17 @@ function App() {
       {/* Navbar is OUTSIDE every wrapper — nothing can break position:fixed */}
       <Navbar />
 
-      {/* Page content — fade-in animation only applies here, never wraps Navbar */}
-      <main className="font-body opacity-0 animate-[fadeIn_0.5s_ease_forwards]" style={{ paddingTop: 80 }}>
-        <Hero />
-        <SocialProof />
-        <BPOCallout />
-        <Services />
-        <WhyUs />
-        <About />
-        <HowItWorks />
-        <Testimonials />
-        <Contact />
-        <Footer />
-      </main>
-
-      {/* Floating Phone CTA — also outside animated wrapper */}
+      {/* Page Content Routes */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/roles" element={<RolesPage />} />
+        <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+      <Footer />      {/* Floating Phone CTA — also outside animated wrapper */}
       <div className="group fixed bottom-8 right-8" style={{ zIndex: 1500 }}>
         <span className="absolute right-20 bottom-3 bg-navy-card text-white font-label text-[10px] font-semibold uppercase tracking-[0.2em] px-5 py-3 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-white/10 shadow-xl backdrop-blur-xl translate-x-3 group-hover:translate-x-0 pointer-events-none">
           Call Us Now
@@ -50,7 +45,7 @@ function App() {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-25"></span>
           <a
             href="tel:+12672987777"
-            className="relative w-14 h-14 bg-gold text-navy rounded-full flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(212,160,23,0.5)] hover:scale-110 hover:bg-gold-light transition-all ring-4 ring-gold/20 hover:ring-gold/40"
+            className="relative w-14 h-14 bg-[#F5A623] text-[#1B2A4A] rounded-full flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(240,148,26,0.5)] hover:scale-110 hover:bg-[#FFBB33] transition-all ring-4 ring-[#F5A623]/20 hover:ring-[#F5A623]/40"
           >
             <Phone className="w-6 h-6" fill="currentColor" />
           </a>

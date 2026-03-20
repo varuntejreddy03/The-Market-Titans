@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { OutlineButton } from './NavButtons';
 
 const stats = [
   { value: '$4',   suffix: '/hr',  label: 'BPO Starting Price',   sub: 'Per agent, fully managed'     },
@@ -8,19 +10,41 @@ const stats = [
 ];
 
 const SocialProof = () => (
-  <section className="bg-[#07091E] border-t border-b border-white/5 relative z-20">
+  <section style={{ background: '#0D1B2E', padding: '100px 0' }} className="relative z-20 overflow-hidden">
     <div className="max-w-7xl mx-auto px-6">
-      <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map(({ value, suffix, label, sub }) => (
-          <div key={label} className="text-center group py-10 lg:py-12 px-4">
-            <div className="font-display text-gold font-bold leading-none tracking-tight mb-3" style={{ fontSize: 'clamp(36px,5vw,52px)' }}>
-              {value}<span className="text-gold/70" style={{ fontSize: 'clamp(18px,2.5vw,26px)' }}>{suffix}</span>
+          <div 
+            key={label} 
+            className="reveal text-center group transition-all duration-400"
+            style={{
+              background: 'linear-gradient(135deg, #162236, #1B2A4A)',
+              border: '1px solid rgba(245,166,35,0.2)',
+              borderTop: '3px solid #F5A623',
+              borderRadius: '16px',
+              padding: '32px 20px',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'translateY(-6px)';
+              e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <div className="font-display leading-none tracking-tight mb-3 stat-number" style={{ color: '#F5A623', fontSize: '52px', fontWeight: 800 }}>
+              {value}<span style={{ fontSize: '26px' }}>{suffix}</span>
             </div>
-            <div className="w-8 h-0.5 bg-gold mx-auto mb-3 opacity-30 group-hover:opacity-100 group-hover:w-12 transition-all duration-500" />
-            <div className="section-tag mb-1">{label}</div>
-            <div className="text-white/30 text-[11px] font-label tracking-wide">{sub}</div>
+            <div className="font-label uppercase font-bold mb-1" style={{ color: '#4DB8E8', fontSize: '11px', letterSpacing: '2px' }}>{label}</div>
+            <div className="font-label font-semibold" style={{ color: '#8899AA', fontSize: '12px' }}>{sub}</div>
           </div>
         ))}
+      </div>
+
+      {/* View Pricing Button */}
+      <div className="text-center" style={{ marginTop: '40px' }}>
+        <OutlineButton to="/pricing">View Pricing &rarr;</OutlineButton>
       </div>
     </div>
   </section>

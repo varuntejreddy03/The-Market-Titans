@@ -4,20 +4,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: '#0A0F2C',
-          mid: '#111A3E',
-          card: '#162047',
-          light: '#162047',
-          dark: '#07091E',
-        },
         gold: {
-          DEFAULT: '#D4A017',
-          light: '#F0C040',
-          muted: '#8C6A10',
-          dark: '#A07810',
+          DEFAULT: '#F5A623',
+          light: '#FFB74D',
+          dark: '#E65100',
         },
-        bg: { light: '#F4F6FA' },
+        navy: {
+          DEFAULT: '#0B1F4D',
+          dark: '#0D1833',
+          card: '#0B1F4D',
+          mid: '#1676D2',
+        },
+        brand: {
+          spartan: '#1676D2',
+          circuit: '#28A7F7',
+          teal: '#28A7F7',
+        },
+        body: '#5E6673',
+        secondary: '#5E6673',
+        bg: {
+          light: '#F7F8FA',
+          card: '#FFFFFF',
+          border: '#E6EAF0',
+        }
       },
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],
