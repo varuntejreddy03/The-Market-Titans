@@ -55,7 +55,8 @@ export default function Navbar() {
     <>
       {/* ══════════════ TOP BAR — Logo + Hamburger Only ══════════════ */}
       <nav style={{
-        position: 'fixed', top: 16, left: 16, right: 16,
+        position: 'fixed', top: 16, left: 0, right: 0,
+        width: 'calc(100% - 48px)',
         maxWidth: 900, margin: '0 auto',
         borderRadius: 50,
         background: navBg,
@@ -67,6 +68,7 @@ export default function Navbar() {
         transition: 'all 0.3s ease',
         display: 'flex', alignItems: 'center',
         padding: '12px 28px',
+        boxSizing: 'border-box',
       }}>
         <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
@@ -98,7 +100,8 @@ export default function Navbar() {
       <div style={{
         position: 'fixed',
         top: scrolled ? 80 : 96,
-        left: 16, right: 16,
+        left: 0, right: 0,
+        width: 'calc(100% - 48px)',
         maxWidth: 900, margin: '0 auto',
         zIndex: 1900,
         background: 'rgba(13, 27, 46, 0.98)',

@@ -22,16 +22,31 @@
   --dark-blue-shadow: 13, 24, 51;
 }
 
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 @layer base {
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   html { scroll-behavior: smooth; }
   body {
     @apply font-body bg-navy text-white;
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.65;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
   }
-  section { scroll-margin-top: 64px; }
+  section {
+    padding: 72px 0;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-margin-top: 64px;
+  }
 
   /* Ensure nothing covers the navbar */
   section, footer, header { isolation: auto; }
@@ -60,7 +75,7 @@
 
 .stat-number {
   font-family: 'Playfair Display', serif;
-  @apply text-[56px] font-bold leading-none tracking-tighter text-gold;
+  @apply text-[42px] font-bold leading-none tracking-tighter text-gold;
 }
 
 /* Animations */
@@ -269,5 +284,5 @@ nav a:first-child {
 }
 
 .reveal.active .stat-number {
-  transform: scale(1.08);
+  transform: scale(1.04);
 }

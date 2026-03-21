@@ -32,19 +32,19 @@ export default function HomePage() {
       {/* 4. WHY US — #0D1B2E */}
       <WhyUs />
 
-      {/* 5. HOW IT WORKS TEASER — floating inside #0D1B2E → #1B2A4A transition */}
-      <section style={{ background: '#1B2A4A', padding: '0 0 0 0' }}>
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full reveal relative z-10" style={{ padding: '60px 40px' }}>
+      {/* 5. HOW IT WORKS TEASER */}
+      <section style={{ background: '#1B2A4A' }}>
+        <div className="max-w-7xl mx-auto px-10 w-full reveal relative z-10">
           <div 
             className="flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-2 transition-all duration-300"
             style={{ 
               background: 'linear-gradient(135deg, #162236, #1E3A6E)', 
               border: '1px solid rgba(77,184,232,0.2)', 
               borderRadius: '20px', 
-              padding: '48px 40px' 
+              padding: '40px 36px' 
             }}
           >
-            <h2 className="font-display text-white font-bold max-w-lg leading-tight" style={{ fontSize: 'clamp(28px, 4vw, 36px)' }}>
+            <h2 className="font-display text-white font-bold max-w-lg leading-tight" style={{ fontSize: 'clamp(22px, 3vw, 30px)' }}>
               From Consultation to Live Team in <span className="text-[#F5A623]">14 Days.</span>
             </h2>
             <Link
@@ -53,7 +53,7 @@ export default function HomePage() {
               style={{ 
                 backgroundColor: '#F5A623', 
                 color: '#1B2A4A', 
-                padding: '16px 32px', 
+                padding: '13px 28px', 
                 borderRadius: '50px', 
                 fontFamily: '"Barlow Condensed", sans-serif',
                 boxShadow: '0 8px 30px rgba(245,166,35,0.4)',

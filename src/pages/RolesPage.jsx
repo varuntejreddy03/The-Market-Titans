@@ -1,6 +1,16 @@
 import React, { useEffect } from 'react';
-import { PhoneCall, Headphones, Keyboard, Share2, ClipboardList, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Code, Landmark, Headphones, Megaphone, Briefcase, UserPlus } from 'lucide-react';
 import { BackToHome, PrimaryButton } from '../components/NavButtons';
+import data from '../data/market_titans_data.json';
+
+const categoryIconMap = {
+  "it-software-development": Code,
+  "finance-accounting": Landmark,
+  "customer-support-sales": Headphones,
+  "digital-marketing": Megaphone,
+  "admin-hr-recruitment": Briefcase
+};
 
 export default function RolesPage() {
   useEffect(() => {
@@ -11,66 +21,74 @@ export default function RolesPage() {
     );
     setTimeout(() => {
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    }, 100);
+    }, 50);
     return () => observer.disconnect();
   }, []);
 
-  const roles = [
-    { title: 'Sales Development Rep (SDR)', icon: <PhoneCall className="w-8 h-8 text-[#F5A623]" />, desc: 'Outbound prospecting, cold calling, lead qualification' },
-    { title: 'Customer Service Agent', icon: <Headphones className="w-8 h-8 text-[#F5A623]" />, desc: '24/7 support, ticket handling, live chat' },
-    { title: 'Data Entry Specialist', icon: <Keyboard className="w-8 h-8 text-[#F5A623]" />, desc: 'CRM updates, spreadsheet management, reporting' },
-    { title: 'Digital Marketing Assistant', icon: <Share2 className="w-8 h-8 text-[#F5A623]" />, desc: 'Social media, content scheduling, ad support' },
-    { title: 'Back-Office Support', icon: <ClipboardList className="w-8 h-8 text-[#F5A623]" />, desc: 'Admin tasks, documentation, process management' },
-    { title: 'Lead Generation Specialist', icon: <Search className="w-8 h-8 text-[#F5A623]" />, desc: 'Research, outreach lists, email campaigns' },
-  ];
-
   return (
-    <main className="font-body bg-[#1B2A4A] min-h-screen pb-24 relative z-10 overflow-hidden">
-      
-      <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#4DB8E8] rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+    <main className="font-body bg-[#0D1B2E] min-h-screen pt-20 pb-12 px-6 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1E3A6E] rounded-full blur-[200px] opacity-10 pointer-events-none"></div>
 
-      <BackToHome />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        <div className="text-center mb-20 reveal opacity-0 animate-[fadeIn_0.5s_0.2s_ease_forwards]">
-          <h1 className="font-display text-white font-bold mb-5" style={{ fontSize: 'clamp(36px,5vw,56px)' }}>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-8">
+          <BackToHome />
+          <h1 className="font-display text-white font-bold text-[26px] md:text-[42px] mb-3 reveal" style={{ lineHeight: '1.1' }}>
             World-Class Offshore Talent.
           </h1>
-          <p className="font-body text-[#CBD5E0] text-[18px] max-w-2xl mx-auto">
+          <p className="text-[#CBD5E0] text-[13px] md:text-[15px] max-w-2xl reveal">
             Pre-vetted. U.S.-trained. Deployed in 14 days.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 reveal">
-          {roles.map((r, i) => (
-            <div 
-              key={i} 
-              className="bg-[#162236] p-8 rounded-2xl border border-white/5 relative overflow-hidden flex flex-col items-start transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] group"
-            >
-              <div className="mb-6 bg-[#1B2A4A] p-4 rounded-xl border border-[#F5A623]/20 shadow-[0_0_15px_rgba(245,166,35,0.1)] group-hover:scale-110 transition-transform duration-300">
-                {r.icon}
-              </div>
-              <h3 className="font-heading text-white font-bold text-[20px] mb-3 leading-snug w-full pr-10">{r.title}</h3>
-              <p className="font-body text-[#8899AA] text-[15px] leading-relaxed mb-8 flex-1">{r.desc}</p>
-              <div className="mt-auto px-4 py-1.5 rounded-full border border-[#4DB8E8]/30 bg-[#4DB8E8]/10 text-[#4DB8E8] text-[11px] font-bold uppercase tracking-widest">
-                From $4/hr
-              </div>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal mb-32">
+          {data.role_categories.map((cat) => {
+            const Icon = categoryIconMap[cat.slug] || Briefcase;
+            return (
+              <Link 
+                key={cat.slug} 
+                to={`/roles/${cat.slug}`}
+                className="bg-[#162236] p-6 rounded-[16px] border-t-[3px] border-[#F5A623] hover:border-[#4DB8E8] shadow-lg transition-transform duration-200 hover:scale-[1.02] relative group overflow-hidden"
+              >
+                <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
+                  <Icon size={100} />
+                </div>
+                
+                <div className="mb-5 p-3 bg-white/5 inline-block rounded-xl text-[#4DB8E8] group-hover:bg-[#F5A623]/10 group-hover:text-[#F5A623] transition-all">
+                  <Icon size={28} />
+                </div>
+                
+                <h3 className="font-display text-white font-bold text-[20px] mb-2">{cat.category}</h3>
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="bg-[#4DB8E8]/10 text-[#4DB8E8] text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-[#4DB8E8]/20">
+                    {cat.total_roles || cat.roles.length} ROLES
+                  </span>
+                </div>
+                
+                <div className="flex items-center gap-3 text-[#F5A623] font-bold text-[14px] uppercase tracking-wider group-hover:gap-5 transition-all">
+                  VIEW ROLES <ArrowRight size={18} />
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="reveal text-center bg-[#162236] rounded-3xl py-14 px-6 border border-[#F5A623]/20 shadow-[0_8px_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#F5A623] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
-          <h3 className="font-display text-white font-[800] mb-8 relative z-10" style={{ fontSize: 'clamp(28px,3vw,36px)' }}>
-            Need a custom role? We build teams around your workflow.
-          </h3>
-          <div className="relative z-10">
-            <PrimaryButton to="/contact">Discuss Custom Role &rarr;</PrimaryButton>
+        {/* CUSTOM DEPLOYMENT SECTION */}
+        <div className="bg-[#111A2C] border-2 border-[rgba(77,184,232,0.15)] rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden reveal">
+          <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#4DB8E8] rounded-full blur-[100px] opacity-10"></div>
+          <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-[#F5A623] rounded-full blur-[100px] opacity-10"></div>
+          
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="font-display text-white font-bold text-3xl md:text-5xl mb-8">
+              Don't see the specific role you need?
+            </h2>
+            <p className="text-[#8899AA] text-lg mb-12">
+              We specialize in custom offshore talent strategies. We can headhunt, vet, and deploy specialists for any technical or administrative requirement.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <PrimaryButton to="/contact">INQUIRE ABOUT CUSTOM ROLE &rarr;</PrimaryButton>
+            </div>
           </div>
         </div>
-
       </div>
     </main>
   );

@@ -5,13 +5,13 @@ import Logo from './Logo';
 import { PrimaryButton } from './NavButtons';
 
 const About = () => (
-  <section id="about" style={{ background: '#1B2A4A', padding: '100px 0' }} className="relative overflow-hidden">
+  <section id="about" style={{ background: '#1B2A4A' }} className="relative overflow-hidden">
     <div className="max-w-7xl mx-auto px-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* Left: Brand Card */}
         <div className="reveal">
-          <div className="relative rounded-3xl h-[480px] flex flex-col items-center justify-center overflow-hidden border border-white/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)]" style={{ background: '#0D1B2E' }}>
+          <div className="relative rounded-3xl h-[380px] flex flex-col items-center justify-center overflow-hidden border border-white/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)]" style={{ background: '#0D1B2E' }}>
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#4DB8E8]/10 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#F5A623]/5 rounded-full blur-[80px] pointer-events-none"></div>
             <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px)', backgroundSize: '50px 50px' }}></div>
@@ -32,8 +32,12 @@ const About = () => (
                 ))}
               </div>
               <div className="flex gap-4 mt-8">
-                {[<Facebook size={16} />, <Instagram size={16} />, <Linkedin size={16} />].map((icon, i) => (
-                  <a key={i} href="#" className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#F5A623] hover:border-[#F5A623] transition-all">
+                {[
+                  { icon: <Facebook size={16} />, href: 'https://www.facebook.com/themarkettitans', label: 'Facebook' },
+                  { icon: <Instagram size={16} />, href: 'https://www.instagram.com/markettitansgroup', label: 'Instagram' },
+                  { icon: <Linkedin size={16} />, href: 'https://www.linkedin.com/company/themarkettitans/', label: 'LinkedIn' },
+                ].map(({ icon, href, label }) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#F5A623] hover:border-[#F5A623] transition-all">
                     {icon}
                   </a>
                 ))}
@@ -45,10 +49,10 @@ const About = () => (
         {/* Right: Copy */}
         <div className="reveal">
           <span className="font-label text-[11px] font-bold tracking-[0.2em] uppercase mb-5 block" style={{ color: '#4DB8E8' }}>REVENUE ENGINE PARTNERS</span>
-          <h2 className="font-display text-white font-bold leading-tight mb-8" style={{ fontSize: 'clamp(32px,4vw,52px)' }}>
+          <h2 className="font-display text-white font-bold leading-tight mb-6" style={{ fontSize: 'clamp(26px,3.5vw,42px)' }}>
             Built by Founders,<br />for Pioneers.
           </h2>
-          <p className="text-[#CBD5E0] text-[17px] leading-relaxed mb-10">
+          <p className="text-[#CBD5E0] text-[15px] leading-relaxed mb-8">
             The Market Titans was born in Clifton Heights, PA, with a singular vision — to democratize elite growth infrastructure. We give U.S. businesses the execution power of Fortune 500 companies at a price that fuels, rather than drains, your bank account. We don't just advise; we deploy.
           </p>
           <div className="flex flex-wrap gap-3 mb-10">

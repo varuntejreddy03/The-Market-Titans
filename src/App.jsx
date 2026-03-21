@@ -8,7 +8,10 @@ import HowItWorksPage from './pages/HowItWorksPage';
 import AboutPage from './pages/AboutPage';
 import PricingPage from './pages/PricingPage';
 import RolesPage from './pages/RolesPage';
+import RoleCategoryPage from './pages/RoleCategoryPage';
+import RoleTemplate from './pages/RoleTemplate.jsx';
 import IndustriesPage from './pages/IndustriesPage';
+import IndustryTemplate from './pages/IndustryTemplate.jsx';
 import ContactPage from './pages/ContactPage';
 
 function App() {
@@ -23,19 +26,21 @@ function App() {
 
   return (
     <>
-      {/* Navbar is OUTSIDE every wrapper — nothing can break position:fixed */}
       <Navbar />
-
-      {/* Page Content Routes */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/roles" element={<RolesPage />} />
+        <Route path="/roles/:category" element={<RoleCategoryPage />} />
+        <Route path="/roles/:category/:slug" element={<RoleTemplate />} />
         <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/industry/:name" element={<IndustryTemplate />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+
+
       <Footer />      {/* Floating Phone CTA — also outside animated wrapper */}
       <div className="group fixed bottom-8 right-8" style={{ zIndex: 1500 }}>
         <span className="absolute right-20 bottom-3 bg-navy-card text-white font-label text-[10px] font-semibold uppercase tracking-[0.2em] px-5 py-3 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap border border-white/10 shadow-xl backdrop-blur-xl translate-x-3 group-hover:translate-x-0 pointer-events-none">

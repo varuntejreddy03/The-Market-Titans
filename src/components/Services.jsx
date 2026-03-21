@@ -11,15 +11,15 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" style={{ background: '#1B2A4A', padding: '100px 0' }} className="relative z-10 scroll-mt-24">
+    <section id="services" style={{ background: '#1B2A4A' }} className="relative z-10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20 reveal">
+        <div className="text-center mb-12 reveal">
           <span className="font-label text-[11px] font-bold tracking-[0.2em] uppercase mb-5 block" style={{ color: '#4DB8E8' }}>OUR SOLUTIONS</span>
-          <h2 className="font-display font-bold leading-tight text-white" style={{ fontSize: 'clamp(32px,4vw,52px)' }}>
+          <h2 className="font-display font-bold leading-tight text-white" style={{ fontSize: 'clamp(26px,3.5vw,42px)' }}>
             What We Build For You.
           </h2>
           <div className="w-16 h-[3px] bg-[#F5A623] mx-auto mt-6 rounded-full"></div>
-          <p className="max-w-xl mx-auto text-[17px] leading-relaxed mt-6" style={{ color: '#8899AA' }}>
+          <p className="max-w-xl mx-auto text-[15px] leading-relaxed mt-6" style={{ color: '#8899AA' }}>
             We don't just provide talent — we build systems that generate measurable output and revenue.
           </p>
         </div>
@@ -28,7 +28,7 @@ const Services = () => {
           {services.map((service, i) => (
             <div
               key={i}
-              className="reveal relative p-10 rounded-3xl flex flex-col items-start gap-6 group overflow-hidden hover:-translate-y-2 transition-all duration-500"
+              className="reveal relative p-7 rounded-3xl flex flex-col items-start gap-5 group overflow-hidden hover:-translate-y-2 transition-all duration-500"
               style={{ 
                 background: '#162236', 
                 border: '1px solid rgba(77,184,232,0.15)',

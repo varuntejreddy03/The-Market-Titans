@@ -11,13 +11,13 @@ const WhyUs = () => {
   const stats = [
     { number: '$4/hr', label: 'BPO Starting Price', desc: 'Pre-trained offshore agents, fully managed from day one.' },
     { number: '14',    label: 'Days to Go Live',    desc: 'From kickoff call to active team deployment.' },
-    { number: '24/7',  label: 'Always On',          desc: 'Round-the-clock operations, zero downtime.' },
+    { number: '82%',   label: 'Cost Savings',       desc: 'Average savings vs. hiring equivalent full-time domestic staff.' },
   ];
 
   return (
-    <section id="whyus" style={{ background: '#0D1B2E', padding: '100px 0' }} className="relative overflow-hidden">
+    <section id="whyus" style={{ background: '#0D1B2E' }} className="relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* Stats */}
           <div className="grid grid-cols-1 gap-6 order-1 lg:order-2">
@@ -28,14 +28,14 @@ const WhyUs = () => {
                 style={{ 
                   background: '#162236', 
                   borderRadius: '12px', 
-                  padding: '28px 32px',
+                  padding: '22px 28px',
                   border: '1px solid rgba(77,184,232,0.1)',
                   borderLeft: '4px solid #F5A623',
                 }}
                 onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.3)'; }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <div className="font-display font-bold leading-none min-w-[100px]" style={{ color: '#F5A623', fontSize: '52px' }}>{stat.number}</div>
+                <div className="font-display font-bold leading-none min-w-[80px]" style={{ color: '#F5A623', fontSize: '40px' }}>{stat.number}</div>
                 <div>
                   <h4 className="font-heading text-white font-bold text-xl mb-1">{stat.label}</h4>
                   <p className="text-[#8899AA] text-sm leading-relaxed">{stat.desc}</p>
@@ -47,7 +47,7 @@ const WhyUs = () => {
           {/* Copy */}
           <div className="reveal order-2 lg:order-1">
             <span className="font-label text-[11px] font-bold tracking-[0.2em] uppercase mb-5 block" style={{ color: '#4DB8E8' }}>WHY THE MARKET TITANS</span>
-            <h2 className="font-heading text-white font-normal leading-tight mb-8" style={{ fontSize: 'clamp(32px,4vw,52px)' }}>
+            <h2 className="font-heading text-white font-normal leading-tight mb-6" style={{ fontSize: 'clamp(26px,3.5vw,42px)' }}>
               We Bridge U.S. Ambition<br />with Global Power
             </h2>
             <div className="border-l-4 border-[#F5A623] pl-6 mb-12">

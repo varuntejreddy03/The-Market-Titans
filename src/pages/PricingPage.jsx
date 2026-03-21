@@ -26,12 +26,12 @@ export default function PricingPage() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Title Block */}
-        <div className="text-center mb-20 reveal opacity-0 animate-[fadeIn_0.5s_0.2s_ease_forwards]">
-          <h1 className="font-display text-white font-bold leading-tight mb-5" style={{ fontSize: 'clamp(36px,5vw,56px)' }}>
+        <div className="text-center mb-14 reveal opacity-0 animate-[fadeIn_0.5s_0.2s_ease_forwards]">
+          <h1 className="font-display text-white font-bold leading-tight mb-4" style={{ fontSize: 'clamp(26px,4vw,44px)' }}>
             Simple, Transparent Pricing.
           </h1>
-          <p className="font-body text-[#CBD5E0] text-[18px] max-w-2xl mx-auto">
-            No hidden fees. No bloated retainers. Just results.
+          <p className="font-body text-[#CBD5E0] text-[15px] max-w-2xl mx-auto">
+            100% Transparent Pricing. Pure Results. Always.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function PricingPage() {
             <div className="mb-6">
               <h3 className="font-heading text-white font-bold text-2xl tracking-wider uppercase mb-3">Starter</h3>
               <div className="mb-2">
-                <span className="font-display font-[800] text-[#F5A623] leading-none" style={{ fontSize: 'clamp(40px,4vw,48px)' }}>$4/hr</span>
+                <span className="font-display font-[800] text-[#F5A623] leading-none" style={{ fontSize: 'clamp(32px,3.5vw,40px)' }}>$4/hr</span>
               </div>
               <p className="text-[#8899AA] text-[14px]">Per Agent · Fully Managed</p>
             </div>
@@ -69,7 +69,7 @@ export default function PricingPage() {
             <div className="mb-6">
               <h3 className="font-heading text-white font-bold text-2xl tracking-wider uppercase mb-3">Growth</h3>
               <div className="mb-2 flex items-center">
-                <span className="font-display font-[800] text-[#F5A623] leading-none" style={{ fontSize: 'clamp(44px,4vw,56px)' }}>$4–8/hr</span>
+                <span className="font-display font-[800] text-[#F5A623] leading-none" style={{ fontSize: 'clamp(36px,3.5vw,44px)' }}>$4–8/hr</span>
               </div>
               <p className="text-[#4DB8E8] text-[15px] font-medium tracking-wide">Complete Revenue System</p>
             </div>
@@ -92,7 +92,7 @@ export default function PricingPage() {
             <div className="mb-6">
               <h3 className="font-heading text-white font-bold text-2xl tracking-wider uppercase mb-3">Enterprise</h3>
               <div className="mb-2">
-                <span className="font-display font-[800] text-[#F5A623] leading-none" style={{ fontSize: 'clamp(40px,4vw,48px)' }}>Custom</span>
+                <span className="font-display font-[800] text-[#F5A623] leading-none" style={{ fontSize: 'clamp(32px,3.5vw,40px)' }}>Custom</span>
               </div>
               <p className="text-[#8899AA] text-[14px]">Bespoke Scaling Infrastructure</p>
             </div>
@@ -115,7 +115,7 @@ export default function PricingPage() {
         {/* Bottom Note */}
         <div className="text-center reveal">
           <p className="text-[#8899AA] text-[13px] md:text-[14px] uppercase tracking-widest font-bold">
-            Free strategy session <span className="mx-2 text-[#F5A623]">·</span> No contracts until confident <span className="mx-2 text-[#F5A623]">·</span> Results-first approach
+            Free strategy session <span className="mx-2 text-[#F5A623]">·</span> Start with full confidence <span className="mx-2 text-[#F5A623]">·</span> Results-first approach
           </p>
         </div>
 

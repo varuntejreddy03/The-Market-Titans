@@ -6,20 +6,20 @@ import { PrimaryButton } from './NavButtons';
 const reasons = [
   { icon: <Zap size={24} />, title: 'First-Mover Advantage', desc: 'Lock in founding-client rates before we scale. Early partners get priority access and dedicated attention.' },
   { icon: <Target size={24} />, title: 'Direct Founder Access', desc: 'Work directly with our founding team — no account managers, no layers. Pure execution focus.' },
-  { icon: <Shield size={24} />, title: 'Zero-Risk Kickoff', desc: 'Start with a free strategy session. No contracts until you\'re confident in the plan and the team.' },
+  { icon: <Shield size={24} />, title: 'Risk-Free Kickoff', desc: 'Start with a free strategy session. Commit only when you are fully confident in the plan and the team.' },
 ];
 
 const Testimonials = () => (
-  <section id="testimonials" style={{ background: '#0D1B2E', padding: '100px 0' }} className="relative overflow-hidden">
+  <section id="testimonials" style={{ background: '#0D1B2E' }} className="relative overflow-hidden">
     <div className="max-w-7xl mx-auto px-6">
 
       {/* Header */}
       <div className="text-center mb-16">
         <span className="font-label text-[11px] font-bold tracking-[0.2em] uppercase mb-5 block" style={{ color: '#4DB8E8' }}>OUR PROMISE</span>
-        <h2 className="font-display text-white font-bold leading-tight mb-4" style={{ fontSize: 'clamp(32px,4vw,52px)' }}>
+        <h2 className="font-display text-white font-bold leading-tight mb-4" style={{ fontSize: 'clamp(26px,3.5vw,42px)' }}>
           Be Our First Victory Story.
         </h2>
-        <p className="text-[#8899AA] max-w-xl mx-auto text-[17px] leading-relaxed">
+        <p className="text-[#8899AA] max-w-xl mx-auto text-[15px] leading-relaxed">
           We're a new firm with a clear mission — and we're looking for our first founding clients who want results, not excuses.
         </p>
         <div className="w-20 h-[2px] bg-[#F5A623] mx-auto mt-8 rounded-full" />
@@ -30,7 +30,7 @@ const Testimonials = () => (
         {reasons.map((r, i) => (
           <div 
             key={i} 
-            className="reveal p-10 group hover:-translate-y-2 transition-all duration-400 cursor-default"
+            className="reveal p-7 group hover:-translate-y-2 transition-all duration-400 cursor-default"
             style={{ 
               background: '#162236', 
               border: '1px solid rgba(245,166,35,0.15)', 
@@ -74,7 +74,7 @@ const Testimonials = () => (
             Ready to be our first case study?
           </h3>
           <p className="text-[#8899AA] text-[15px]">
-            Free strategy session · No commitment · Results-first approach
+            Free strategy session · Commit with full confidence · Results-first approach
           </p>
         </div>
         <PrimaryButton to="/contact">Claim Your Spot &rarr;</PrimaryButton>

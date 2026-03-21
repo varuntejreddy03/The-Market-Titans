@@ -4,7 +4,7 @@ import { Facebook, Instagram, Linkedin, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => (
-  <footer style={{ background: '#060E1A', borderTop: '1px solid rgba(77,184,232,0.15)' }} className="pt-16 md:pt-24 pb-10 text-white relative z-20 overflow-hidden">
+  <footer style={{ background: '#060E1A', borderTop: '1px solid rgba(77,184,232,0.15)' }} className="pt-12 pb-8 text-white relative z-20 overflow-hidden">
     <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full h-40 bg-[#4DB8E8]/5 rounded-full blur-[100px]"></div>
 
     <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -15,12 +15,22 @@ const Footer = () => (
           <div className="mb-6">
             <Logo size="footer" />
           </div>
-          <p className="italic text-sm leading-relaxed mb-8" style={{ color: '#8899AA' }}>"We build revenue engines."</p>
+          <p className="italic text-sm leading-relaxed mb-4" style={{ color: '#8899AA' }}>"We build revenue engines."</p>
+          <p className="text-[#8899AA] text-[13px] leading-relaxed mb-8">
+            High-performance BPO, offshore operations, and marketing consulting for U.S. businesses. Pre-vetted talent. Live in 14 days. Starting at $4/hr.
+          </p>
           <div className="flex gap-3">
-            {[<Facebook size={16} />, <Instagram size={16} />, <Linkedin size={16} />].map((icon, i) => (
+            {[
+              { icon: <Facebook size={16} />, href: 'https://www.facebook.com/themarkettitans', label: 'Facebook' },
+              { icon: <Instagram size={16} />, href: 'https://www.instagram.com/markettitansgroup', label: 'Instagram' },
+              { icon: <Linkedin size={16} />, href: 'https://www.linkedin.com/company/themarkettitans/', label: 'LinkedIn' },
+            ].map(({ icon, href, label }) => (
               <a 
-                key={i} 
-                href="#" 
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
                 className="flex items-center justify-center transition-all duration-300 hover:scale-110"
                 style={{ 
                   width: '36px', 

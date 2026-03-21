@@ -11,16 +11,16 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="howitworks" className="bg-[#1B2A4A] py-24 relative z-10 scroll-mt-24 overflow-hidden">
+    <section id="howitworks" className="bg-[#1B2A4A] relative z-10 scroll-mt-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Title */}
         <div className="text-center mb-20 reveal">
-          <h2 className="font-display text-white font-[900] leading-tight mb-4" style={{ fontSize: 'clamp(32px,5vw,60px)' }}>
+          <h2 className="font-display text-white font-[900] leading-tight mb-4" style={{ fontSize: 'clamp(26px,4vw,48px)' }}>
             From Kickoff to Revenue — In 14 Days.
           </h2>
-          <p className="text-[#CBD5E0] max-w-xl mx-auto text-[17px] md:text-[18px] leading-relaxed">
-            No fluff. No lengthy onboarding. Just results.
+          <p className="text-[#CBD5E0] max-w-xl mx-auto text-[15px] md:text-[16px] leading-relaxed">
+            Rapid Onboarding. Pure Results.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ const HowItWorks = () => {
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  <div className="font-display font-[800] leading-none mb-4" style={{ color: '#F5A623', fontSize: 'clamp(40px, 5vw, 56px)' }}>
+                  <div className="font-display font-[800] leading-none mb-4" style={{ color: '#F5A623', fontSize: 'clamp(32px, 4vw, 44px)' }}>
                     {s.num}
                   </div>
                   <h3 className="font-heading text-white font-bold text-[18px] md:text-[20px] mb-3 uppercase tracking-widest">{s.title}</h3>
@@ -64,10 +64,10 @@ const HowItWorks = () => {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="reveal text-center bg-[#162236] rounded-2xl md:rounded-3xl py-10 md:py-14 px-6 shadow-[0_8px_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
+        <div className="reveal text-center bg-[#162236] rounded-2xl md:rounded-3xl py-8 md:py-10 px-6 shadow-[0_8px_40px_rgba(0,0,0,0.3)] relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#4DB8E8] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
           
-          <h3 className="font-display text-white font-[800] mb-8 relative z-10" style={{ fontSize: 'clamp(24px,4vw,40px)' }}>
+          <h3 className="font-display text-white font-[800] mb-6 relative z-10" style={{ fontSize: 'clamp(20px,3vw,32px)' }}>
             Ready to build your revenue engine?
           </h3>
           <div className="relative z-10">

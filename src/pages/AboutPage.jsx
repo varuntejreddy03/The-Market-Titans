@@ -51,23 +51,23 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Hero Section */}
-        <div className="text-center mb-24 reveal opacity-0 animate-[fadeIn_0.5s_0.2s_ease_forwards]">
-          <h1 className="font-display text-white font-bold leading-[1.1]" style={{ fontSize: 'clamp(36px,5vw,52px)' }}>
+        <div className="text-center mb-14 reveal opacity-0 animate-[fadeIn_0.5s_0.2s_ease_forwards]">
+          <h1 className="font-display text-white font-bold leading-[1.1]" style={{ fontSize: 'clamp(26px,4vw,40px)' }}>
             We Help U.S. Businesses Scale Smarter — Not Heavier.
           </h1>
         </div>
 
         {/* Mission Block */}
-        <div className="text-center mb-32 reveal">
-          <h2 className="font-display italic leading-tight mb-8" style={{ color: '#F5A623', fontSize: 'clamp(28px,4vw,32px)', textShadow: '0 0 30px rgba(245,166,35,0.2)' }}>
+        <div className="text-center mb-16 reveal">
+          <h2 className="font-display italic leading-tight mb-6" style={{ color: '#F5A623', fontSize: 'clamp(20px,3vw,26px)', textShadow: '0 0 30px rgba(245,166,35,0.2)' }}>
             "We don't sell services. We build revenue engines."
           </h2>
           <div className="w-[80px] h-[3px] bg-[#F5A623] mx-auto rounded-full shadow-[0_0_15px_rgba(245,166,35,0.5)]"></div>
         </div>
 
         {/* Who We Work With Section */}
-        <div className="mb-32 reveal">
-          <h3 className="font-display text-white font-bold text-center mb-12" style={{ fontSize: 'clamp(28px,3vw,36px)' }}>Who We Work With</h3>
+        <div className="mb-16 reveal">
+          <h3 className="font-display text-white font-bold text-center mb-8" style={{ fontSize: 'clamp(22px,2.5vw,30px)' }}>Who We Work With</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whoWeWorkWith.map((item, i) => (
               <div key={i} className="bg-[#162236] rounded-2xl p-8 border border-[#4DB8E8]/10 hover:border-[#4DB8E8]/30 hover:-translate-y-2 transition-all duration-300 shadow-xl">
@@ -82,8 +82,8 @@ export default function AboutPage() {
         </div>
 
         {/* Our Expertise Section */}
-        <div className="mb-32 reveal">
-          <h3 className="font-display text-white font-bold text-center mb-12" style={{ fontSize: 'clamp(28px,3vw,36px)' }}>Our Expertise</h3>
+        <div className="mb-16 reveal">
+          <h3 className="font-display text-white font-bold text-center mb-8" style={{ fontSize: 'clamp(22px,2.5vw,30px)' }}>Our Expertise</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {expertise.map((item, i) => (
               <div key={i} className="bg-[#162236] p-8 rounded-tr-xl rounded-br-xl hover:bg-[#1A2840] transition-colors group relative" style={{ borderLeft: '3px solid #F5A623' }}>
@@ -98,7 +98,7 @@ export default function AboutPage() {
         </div>
 
         {/* Results Section */}
-        <div className="mb-32 reveal">
+        <div className="mb-16 reveal">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {results.map((res, i) => (
               <div 
@@ -120,13 +120,13 @@ export default function AboutPage() {
             <div className="mb-10 w-[120px] opacity-80 filter brightness-0 invert">
                <Logo />
             </div>
-            <h3 className="font-display text-white font-bold leading-tight" style={{ fontSize: 'clamp(32px,4vw,40px)' }}>
+            <h3 className="font-display text-white font-bold leading-tight" style={{ fontSize: 'clamp(24px,3vw,32px)' }}>
               Born in Clifton Heights, PA.<br/><span className="text-[#F5A623]">Built for the world.</span>
             </h3>
           </div>
           
           <div className="p-12 lg:p-16 flex flex-col justify-center items-start bg-[#162236]">
-            <p className="text-[#8899AA] text-[16px] leading-[1.8] mb-10">
+            <p className="text-[#8899AA] text-[14px] leading-[1.75] mb-8">
               The Market Titans began with a singular focus: to strip away the expensive, bloated overhead constraints crippling fast-growing U.S. businesses. By fusing hyper-efficient digital marketing strategies with elite offshore BPO infrastructure, we built an agency model defined entirely by margin expansion and aggressive revenue targeting. We execute where others just consult.
             </p>
             <PrimaryButton to="/contact">Our Mission Manifesto &rarr;</PrimaryButton>

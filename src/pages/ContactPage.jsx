@@ -20,7 +20,9 @@ export default function ContactPage() {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1E6FBF] rounded-full blur-[250px] opacity-10 pointer-events-none -z-10"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#4DB8E8] rounded-full blur-[200px] opacity-[0.05] pointer-events-none -z-10"></div>
       
-      <BackToHome />
+      <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto', padding: '0 40px', boxSizing: 'border-box' }}>
+        <BackToHome />
+      </div>
       <Contact />
     </main>
   );
