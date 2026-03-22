@@ -30,7 +30,13 @@ const Hero = () => {
         ></div>
       ))}
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center" style={{ paddingTop: '120px' }}>
+      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center" style={{ paddingTop: '100px' }}>
+        {/* Brand Name */}
+        <div className="reveal flex justify-center mb-6 opacity-0 animate-[fadeIn_0.5s_ease_forwards]">
+          <span className="text-white font-display font-[900] uppercase tracking-[0.4em] text-[24px] md:text-[32px]" style={{ textShadow: '0 0 20px rgba(255,255,255,0.2)' }}>
+            THE MARKET TITANS
+          </span>
+        </div>
 
         {/* Badge */}
         <div className="opacity-0 animate-[fadeIn_0.5s_0.1s_ease_forwards] inline-flex items-center space-x-2 border border-gold/50 bg-gold/5 px-5 py-2 rounded-full mb-6 badge-pulse shadow-[0_4px_15px_rgba(245,166,35,0.15)]">
@@ -39,11 +45,11 @@ const Hero = () => {
 
         {/* Headline */}
         <div className="space-y-2 mb-6 opacity-0 animate-[fadeIn_0.5s_0.15s_ease_forwards]">
-          <h1 className="font-display text-white font-[900]" style={{ fontSize: 'clamp(36px, 6vw, 78px)', lineHeight: '1.1' }}>
+          <h1 className="font-display text-white font-[900]" style={{ fontSize: 'clamp(42px, 7vw, 92px)', lineHeight: '1.1' }}>
             We Don't Sell Services.
           </h1>
           <div className="relative inline-block">
-            <h1 className="font-display font-[900] text-[#F5A623]" style={{ fontSize: 'clamp(36px, 6vw, 78px)', lineHeight: '1.1', textShadow: '0 0 40px rgba(245,166,35,0.3)' }}>
+            <h1 className="font-display font-[900] text-[#F5A623]" style={{ fontSize: 'clamp(42px, 7vw, 92px)', lineHeight: '1.1', textShadow: '0 0 40px rgba(245,166,35,0.3)' }}>
               We Build Revenue Engines.
             </h1>
           </div>
@@ -55,7 +61,7 @@ const Hero = () => {
         </div>
 
         {/* Subheadline */}
-        <p className="opacity-0 animate-[fadeIn_0.5s_0.3s_ease_forwards] text-[#CBD5E0] max-w-3xl mx-auto mb-10" style={{ fontSize: '20px', lineHeight: '1.65' }}>
+        <p className="opacity-0 animate-[fadeIn_0.5s_0.3s_ease_forwards] text-[#CBD5E0] max-w-4xl mx-auto mb-10" style={{ fontSize: '24px', lineHeight: '1.65' }}>
           High-performance BPO, offshore operations, and marketing consulting —{' '}
           <span className="text-[#F5A623] font-bold">starting at $4/hour.</span>
         </p>
