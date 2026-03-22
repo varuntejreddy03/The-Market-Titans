@@ -6,7 +6,7 @@ const stats = [
   { value: '$4',   suffix: '/hr',   label: 'BPO Starting Price',  sub: 'Per agent, fully managed'       },
   { value: '14',   suffix: ' days', label: 'Live in 14 Days',      sub: 'From kickoff to deployment'     },
   { value: '24/7', suffix: '',      label: 'Always On',            sub: 'Round-the-clock operations'     },
-  { value: '82%',  suffix: '',      label: 'Cost Savings',         sub: 'vs. hiring full-time in-house'  },
+  { value: '40-60%', suffix: '',      label: 'Cost Savings',         sub: 'vs. hiring full-time in-house'  },
 ];
 
 const SocialProof = () => (

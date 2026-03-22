@@ -11,7 +11,7 @@ const WhyUs = () => {
   const stats = [
     { number: '$4/hr', label: 'BPO Starting Price', desc: 'Pre-trained offshore agents, fully managed from day one.' },
     { number: '14',    label: 'Days to Go Live',    desc: 'From kickoff call to active team deployment.' },
-    { number: '82%',   label: 'Cost Savings',       desc: 'Average savings vs. hiring equivalent full-time domestic staff.' },
+    { number: '40-60%', label: 'Cost Savings',       desc: 'Average savings vs. hiring full-time in-house' },
   ];
 
   return (

@@ -42,25 +42,27 @@ const Contact = () => {
             <span className="font-label text-[11px] font-bold tracking-[0.2em] uppercase mb-4 block" style={{ color: '#4DB8E8' }}>GLOBAL OFFICES</span>
             <div className="flex flex-col gap-3">
               {[
-                { flag: '🇺🇸', code: 'US', region: 'US & Canada',                    number: '+1 (267) 298-7777',  tel: '+12672987777'  },
-                { flag: '🇬🇧', code: 'GB', region: 'Potters Bar, Hertfordshire, England', number: '+44 7587 910957', tel: '+447587910957' },
-                { flag: '🇩🇪', code: 'DE', region: 'Lichtenberg, Berlin, Germany',    number: '+49 176 58698118', tel: '+4917658698118' },
-                { flag: '🇦🇺', code: 'AU', region: 'Wyndham, Melbourne, Australia',   number: '+61 469 342953',  tel: '+61469342953'  },
+                { flag: 'https://flagcdn.com/us.svg', code: 'US', region: 'US & Canada',                    number: '+1 (267) 298-7777',  tel: '+12672987777'  },
+                { flag: 'https://flagcdn.com/gb.svg', code: 'GB', region: 'Potters Bar, Hertfordshire, England', number: '+44 7587 910957', tel: '+447587910957' },
+                { flag: 'https://flagcdn.com/de.svg', code: 'DE', region: 'Lichtenberg, Berlin, Germany',    number: '+49 176 58698118', tel: '+4917658698118' },
+                { flag: 'https://flagcdn.com/au.svg', code: 'AU', region: 'Wyndham, Melbourne, Australia',   number: '+61 469 342953',  tel: '+61469342953'  },
               ].map(({ flag, code, region, number, tel }) => (
                 <a
                   key={tel}
                   href={`tel:${tel}`}
-                  className="group flex items-center gap-4 rounded-xl px-4 py-3 transition-all duration-200 hover:-translate-y-0.5"
-                  style={{ background: '#162236', border: '1px solid rgba(77,184,232,0.12)', boxSizing: 'border-box' }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(245,166,35,0.4)'}
+                  className="group flex items-center gap-5 rounded-xl px-5 py-4 transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: '#111A2C', border: '1px solid rgba(77,184,232,0.12)', boxSizing: 'border-box' }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = '#F5A623'}
                   onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(77,184,232,0.12)'}
                 >
-                  <span className="text-xl w-8 text-center">{flag}</span>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-[#8899AA] text-[10px] font-label uppercase tracking-widest">{region}</div>
-                    <div className="text-white font-semibold text-[14px] tracking-wide group-hover:text-[#F5A623] transition-colors">{number}</div>
+                  <div className="w-10 h-7 shrink-0 overflow-hidden rounded-sm shadow-sm border border-white/10">
+                    <img src={flag} alt={code} className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-[#F5A623] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[#8899AA] text-[10px] font-label uppercase tracking-[0.15em] mb-0.5">{region}</div>
+                    <div className="text-white font-bold text-[15px] tracking-wide group-hover:text-[#F5A623] transition-colors">{number}</div>
+                  </div>
+                  <span className="text-[#F5A623] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">→</span>
                 </a>
               ))}
             </div>

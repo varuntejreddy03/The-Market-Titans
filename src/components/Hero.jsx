@@ -2,13 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, CheckCircle } from 'lucide-react';
 
+import Logo from './Logo';
+
 const Hero = () => {
   return (
     <section id="home" className="relative flex flex-col justify-center overflow-hidden" style={{ background: 'radial-gradient(ellipse at 60% 50%, #1E3A6E 0%, #1B2A4A 40%, #0D1B2E 100%)', minHeight: '100vh', paddingBottom: 0 }}>
+      {/* Background elements... */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(30,111,191,0.2) 0%, transparent 60%)' }}></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1E6FBF] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
       
-      {/* Animated Floating Particles */}
+      {/* Animated Floating Particles... */}
       {[
         {top: '15%', left: '20%', size: '8px', delay: '0s'},
         {top: '45%', right: '15%', size: '6px', delay: '1.5s'},
@@ -28,13 +31,18 @@ const Hero = () => {
       ))}
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center" style={{ paddingTop: '60px' }}>
+        {/* Brand Logo in Hero */}
+        <div className="reveal flex justify-center mb-6 opacity-0 animate-[fadeIn_0.5s_ease_forwards]">
+          <Logo size="lg" />
+        </div>
+
         {/* Badge */}
-        <div className="opacity-0 animate-[fadeIn_0.5s_ease_forwards] inline-flex items-center space-x-2 border border-gold/50 bg-gold/5 px-5 py-2 rounded-full mb-8 badge-pulse shadow-[0_4px_15px_rgba(245,166,35,0.15)]">
+        <div className="opacity-0 animate-[fadeIn_0.5s_0.1s_ease_forwards] inline-flex items-center space-x-2 border border-gold/50 bg-gold/5 px-5 py-2 rounded-full mb-6 badge-pulse shadow-[0_4px_15px_rgba(245,166,35,0.15)]">
           <span className="section-tag">⚡ U.S. BUSINESS GROWTH EXPERTS</span>
         </div>
 
         {/* Headline */}
-        <div className="space-y-3 mb-6 opacity-0 animate-[fadeIn_0.5s_0.15s_ease_forwards]">
+        <div className="space-y-2 mb-6 opacity-0 animate-[fadeIn_0.5s_0.15s_ease_forwards]">
           <h1 className="font-display text-white font-[900]" style={{ fontSize: 'clamp(28px, 4.5vw, 56px)', lineHeight: '1.1' }}>
             We Don't Sell Services.
           </h1>
