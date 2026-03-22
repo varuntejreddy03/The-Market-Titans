@@ -30,11 +30,7 @@ const Hero = () => {
         ></div>
       ))}
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center" style={{ paddingTop: '60px' }}>
-        {/* Brand Logo in Hero — Desktop Only */}
-        <div className="reveal hidden md:flex justify-center mb-6 opacity-0 animate-[fadeIn_0.5s_ease_forwards]">
-          <Logo size="lg" />
-        </div>
+      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center" style={{ paddingTop: '120px' }}>
 
         {/* Badge */}
         <div className="opacity-0 animate-[fadeIn_0.5s_0.1s_ease_forwards] inline-flex items-center space-x-2 border border-gold/50 bg-gold/5 px-5 py-2 rounded-full mb-6 badge-pulse shadow-[0_4px_15px_rgba(245,166,35,0.15)]">
@@ -43,11 +39,11 @@ const Hero = () => {
 
         {/* Headline */}
         <div className="space-y-2 mb-6 opacity-0 animate-[fadeIn_0.5s_0.15s_ease_forwards]">
-          <h1 className="font-display text-white font-[900]" style={{ fontSize: 'clamp(28px, 4.5vw, 56px)', lineHeight: '1.1' }}>
+          <h1 className="font-display text-white font-[900]" style={{ fontSize: 'clamp(36px, 6vw, 78px)', lineHeight: '1.1' }}>
             We Don't Sell Services.
           </h1>
           <div className="relative inline-block">
-            <h1 className="font-display font-[900] text-[#F5A623]" style={{ fontSize: 'clamp(28px, 4.5vw, 56px)', lineHeight: '1.1', textShadow: '0 0 40px rgba(245,166,35,0.3)' }}>
+            <h1 className="font-display font-[900] text-[#F5A623]" style={{ fontSize: 'clamp(36px, 6vw, 78px)', lineHeight: '1.1', textShadow: '0 0 40px rgba(245,166,35,0.3)' }}>
               We Build Revenue Engines.
             </h1>
           </div>
@@ -59,7 +55,7 @@ const Hero = () => {
         </div>
 
         {/* Subheadline */}
-        <p className="opacity-0 animate-[fadeIn_0.5s_0.3s_ease_forwards] text-[#CBD5E0] max-w-2xl mx-auto mb-10" style={{ fontSize: '16px', lineHeight: '1.65' }}>
+        <p className="opacity-0 animate-[fadeIn_0.5s_0.3s_ease_forwards] text-[#CBD5E0] max-w-3xl mx-auto mb-10" style={{ fontSize: '20px', lineHeight: '1.65' }}>
           High-performance BPO, offshore operations, and marketing consulting —{' '}
           <span className="text-[#F5A623] font-bold">starting at $4/hour.</span>
         </p>
@@ -74,8 +70,8 @@ const Hero = () => {
               color: '#1B2A4A', 
               fontWeight: 800, 
               borderRadius: '50px', 
-              padding: '13px 28px',
-              fontSize: '13px',
+              padding: '16px 36px',
+              fontSize: '15px',
               letterSpacing: '1px',
               boxShadow: '0 8px 30px rgba(245,166,35,0.4)',
               textDecoration: 'none'
@@ -93,8 +89,8 @@ const Hero = () => {
               color: '#4DB8E8', 
               background: 'transparent', 
               borderRadius: '50px', 
-              padding: '13px 28px',
-              fontSize: '13px',
+              padding: '16px 36px',
+              fontSize: '15px',
               letterSpacing: '1px',
               fontWeight: 800,
               textDecoration: 'none'
@@ -132,7 +128,7 @@ const Hero = () => {
           ].map((item) => (
             <div key={item} className="flex items-center space-x-3 text-white font-semibold">
               <CheckCircle className="text-[#F5A623] flex-shrink-0" size={17} />
-              <span style={{ fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase' }}>{item}</span>
+              <span style={{ fontSize: '15px', letterSpacing: '1.5px', textTransform: 'uppercase' }}>{item}</span>
             </div>
           ))}
         </div>
