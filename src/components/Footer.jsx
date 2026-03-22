@@ -12,8 +12,8 @@ const Footer = () => (
 
         {/* Brand */}
         <div>
-          <div className="mb-6">
-            <Logo size="footer" />
+          <div className="mb-6 hidden md:block">
+            <Logo size="md" />
           </div>
           <p className="italic text-sm leading-relaxed mb-4" style={{ color: '#8899AA' }}>"We build revenue engines."</p>
           <p className="text-[#8899AA] text-[13px] leading-relaxed mb-8">

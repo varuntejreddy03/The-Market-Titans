@@ -31,8 +31,8 @@ const Hero = () => {
       ))}
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center" style={{ paddingTop: '60px' }}>
-        {/* Brand Logo in Hero */}
-        <div className="reveal flex justify-center mb-6 opacity-0 animate-[fadeIn_0.5s_ease_forwards]">
+        {/* Brand Logo in Hero — Desktop Only */}
+        <div className="reveal hidden md:flex justify-center mb-6 opacity-0 animate-[fadeIn_0.5s_ease_forwards]">
           <Logo size="lg" />
         </div>
 

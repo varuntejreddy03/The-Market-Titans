@@ -17,7 +17,7 @@ const About = () => (
             <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px)', backgroundSize: '50px 50px' }}></div>
 
             <div className="text-center z-10 px-10 flex flex-col items-center">
-              <div className="mb-10">
+              <div className="mb-10 hidden md:flex">
                 <Logo size="lg" />
               </div>
               <div className="flex flex-wrap gap-3 justify-center">

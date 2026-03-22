@@ -36,7 +36,7 @@ const BrandLogo = ({ className = "", size = 'md' }) => {
 
 // Compact: For navbar
 export const LogoCompact = () => (
-  <div className="navbar-logo-wrapper hover:opacity-90 transition-opacity">
+  <div className="navbar-logo-wrapper hover:opacity-90 transition-opacity hidden md:block">
     <BrandLogo className="navbar-logo" size="sm" />
   </div>
 );
