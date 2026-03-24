@@ -94,12 +94,36 @@ const Footer = () => (
 
       </div>
 
-      <div className="pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-center md:text-left" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <div className="pt-6 md:pt-8 flex flex-col items-center gap-3 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <a
+          href="https://staffarc.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2.5 transition-opacity duration-300 hover:opacity-90"
+          aria-label="Built by StaffArc"
+        >
+          <span className="text-white/80 text-xl leading-none">♡</span>
+          <span className="font-body text-[15px] text-white/85">Made with</span>
+          <img
+            src="https://www.staffarc.in/images/Staffarc-logo.png"
+            alt="StaffArc"
+            className="h-7 w-auto"
+            loading="lazy"
+          />
+          <span className="font-body text-[15px] text-[#F07D22] font-semibold">by StaffArc</span>
+        </a>
         <p className="font-label text-[10px] md:text-[11px] tracking-[0.15em] uppercase" style={{ color: '#4A5568' }}>
-          © 2026 THE MARKET TITANS | ALL RIGHTS RESERVED
-        </p>
-        <p className="font-label text-[10px] md:text-[11px] tracking-[0.15em] uppercase" style={{ color: '#4A5568' }}>
-          STRATEGIC GROWTH CONSULTING
+          © 2026{' '}
+          <a
+            href="https://themarkettitans.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#F5A623] transition-colors duration-300"
+            style={{ color: 'inherit' }}
+          >
+            THE MARKET TITANS
+          </a>{' '}
+          | ALL RIGHTS RESERVED
         </p>
       </div>
     </div>

@@ -105,7 +105,7 @@ const Contact = () => {
         {/* Right Side: Form */}
         <div className="reveal p-8 md:p-10 rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] relative" style={{ background: '#162236', border: '1px solid rgba(77,184,232,0.2)', width: '100%', boxSizing: 'border-box' }}>
           <div className="absolute -top-4 -right-4 bg-[#F5A623] text-[#1B2A4A] font-bold text-[10px] uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
-            Priority Routing
+            Contact Us
           </div>
           <form className="space-y-5" style={{ width: '100%', boxSizing: 'border-box' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', width: '100%', boxSizing: 'border-box' }}>
